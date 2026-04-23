@@ -50,5 +50,40 @@ public class TicketManager implements HelpDesk {
 			} // end if
 		} // end while
 	} // end start
+	
+	public void startAdmin(){
+		boolean keepGoing = true;
+		while (keepGoing){
+			String response = admin.menu();
+			if (response.equals("0")){
+				keepGoing = false;
+			} else if (response.equals("1")){
+				System.out.println("Add User");
+				this.addUser();
+			} else if (response.equals("2")){
+				System.out.println("Delete user");
+				this.deleteUser();
+			} // end if
+		} // end while
+	} // end startAdmin
+	
+	public void addUser(){
+		Scanner input = new Scanner(System.in);
+		System.out.print("Username: ");
+		String userName = input.nextLine();
+		System.out.print("Password: ");
+		String password = input.nextLine();
+		users.add(new User(userName, password));
+	} // end addUser
+	
+	public void loginAsUser(){
+		Scanner input = new Scanner (System.in);
+		System.out.print("Username: ");
+		String userNameIn = input.nextLine();
+		System.out.print("Password: ");
+		String passwordIn = input.nextLine();
+		
+	} // end loginAsUser
+
 
 } // end TicketManager class
