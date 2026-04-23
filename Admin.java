@@ -29,4 +29,6 @@ public class Admin extends User implements HelpDesk, Serializable {
 		return response;
 	} // end menu
 	
+	public void start(){
+	}
 } // end Admin class
