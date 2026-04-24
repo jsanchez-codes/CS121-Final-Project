@@ -5,6 +5,7 @@ public class TicketManager implements HelpDesk {
 
 	Admin admin = new Admin();
 	TicketList tickets = new TicketList();
+	ArrayList<String> categories = new ArrayList<>(List.of("Software","Hardware","Account"));	
 
 	public static void main(String[] args){
 		new TicketManager();
@@ -38,13 +39,15 @@ public class TicketManager implements HelpDesk {
 			if (response.equals("0")){
 				keepGoing = false;
 			} else if (response.equals("1")){
+				int categoryIndex;
+				String description;
+
+				System.out.println("What category is your technology issue: ");
+				for(int = 0; i < categories.length();i++){
 				System.out.println("Admin login");
 				if (this.admin.login()){
 					startAdmin();
 				} // end if
-			} else if (response.equals("2")){
-				System.out.println("User login");
-				this.loginAsUser();
 			} else {
 				System.out.println("Invalid Action. Please enter 0, 1, or 2");
 			} // end if
@@ -75,15 +78,6 @@ public class TicketManager implements HelpDesk {
 		String password = input.nextLine();
 		users.add(new User(userName, password));
 	} // end addUser
-	
-	public void loginAsUser(){
-		Scanner input = new Scanner (System.in);
-		System.out.print("Username: ");
-		String userNameIn = input.nextLine();
-		System.out.print("Password: ");
-		String passwordIn = input.nextLine();
-		
-	} // end loginAsUser
-
 
 } // end TicketManager class
+class TicketList extends ArrayList<Tickets> {};
