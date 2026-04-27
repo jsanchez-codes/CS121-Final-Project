@@ -91,4 +91,4 @@ public class TicketManager implements HelpDesk {
 	} // end addUser
 
 } // end TicketManager class
-class TicketList extends ArrayList<Tickets> {};
+class TicketList extends ArrayList<Ticket> {};
