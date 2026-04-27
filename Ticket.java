@@ -1,16 +1,19 @@
-
-import java.util.*
+import java.util.*;
 import java.io.*;
 
 public class Ticket implements HelpDesk, Serializable {
+	
+	String category;
+	String description; 
 	
 	public static void main(String[] args){
 		Ticket t = new Ticket();
 		t.start();
 	} // end main
 	
-	public Ticket(){
-		this.ticket = ticket;
+	public Ticket(String category, String description){
+		this.category = category;
+		this.description = description;
 	} // end constructor
 
 	public String menu(){
