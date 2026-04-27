@@ -45,7 +45,8 @@ public class TicketManager implements HelpDesk {
 				System.out.println("What category is your technology issue: ");
 				for(int i = 0; i < categories.length();i++){
 					System.out.printf("%d) %s\n",i,categories.get(i));
-				}
+				} // end for
+
 				System.out.println("What category is your issue(enter number above): ");
 				categoryIndex = scnr.nextInt();
 
