@@ -53,7 +53,7 @@ public class TicketManager implements HelpDesk {
 				description = scnr.nextLine();
 
 				tickets.add(new Ticket(categories.get(categoryIndex),description));
-			} else if (response.equals("2"){
+			} else if (response.equals("2")){
 				System.out.println("Admin login");
 				if (this.admin.login()){
 					startAdmin();
