@@ -12,9 +12,9 @@ public class TicketManager implements HelpDesk {
 	} // end main
 	
 	public TicketManager(){
-		this.loadTickets();
+		// this.loadTickets();
 		this.start();
-		this.saveTickets();
+		// this.saveTickets();
 	} // end constructor
 	
 	public String menu(){
@@ -33,6 +33,7 @@ public class TicketManager implements HelpDesk {
 	} // end menu
 	
 	public void start(){
+		Scanner scnr = new Scanner(System.in);
 		boolean keepGoing = true;
 		while (keepGoing){
 			String response = menu();
