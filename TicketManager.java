@@ -44,12 +44,12 @@ public class TicketManager implements HelpDesk {
 				String description;
 
 				System.out.println("What category is your technology issue: ");
-				for(int i = 0; i < categories.length();i++){
+				for(int i = 0; i < categories.size();i++){
 					System.out.printf("%d) %s\n",i,categories.get(i));
 				} // end for
 
 				System.out.println("What category is your issue(enter number above): ");
-				categoryIndex = scnr.nextInt();
+				categoryIndex = Integer.parseInt(scnr.nextLine());
 
 				System.out.print("Please enter a description of your issue: ");
 				description = scnr.nextLine();
@@ -73,23 +73,12 @@ public class TicketManager implements HelpDesk {
 			if (response.equals("0")){
 				keepGoing = false;
 			} else if (response.equals("1")){
-				System.out.println("Add User");
-				this.addUser();
-			} else if (response.equals("2")){
-				System.out.println("Delete user");
-				this.deleteUser();
+				for(Ticket ticket: tickets){
+					System.out.println(ticket.toString());
+				} // end for
 			} // end if
 		} // end while
 	} // end startAdmin
-	
-	public void addUser(){
-		Scanner input = new Scanner(System.in);
-		System.out.print("Username: ");
-		String userName = input.nextLine();
-		System.out.print("Password: ");
-		String password = input.nextLine();
-		users.add(new User(userName, password));
-	} // end addUser
 
 } // end TicketManager class
 class TicketList extends ArrayList<Ticket> {};
