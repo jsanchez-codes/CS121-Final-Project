@@ -1,7 +1,7 @@
 # CS121-Final-Project
 IT Help Desk Ticket Program
 
-The goal of this program is for a user to be able to create a help desk ticket for any technical support. The user will be prompted to type a number based on the category, and then input a description based on the issue they are encountering. An admin will be able to use their credentials to log in and view and reslove any open tickets.
+The goal of this program is for a user to be able to create a help desk ticket for any technical support. The user will be prompted to type a number based on the category (Hardware, Software, Account, Network, and Security) and then input a description based on the issue they are experiencing. An admin will be able to use their credentials to log in and view and resolve any open tickets.
 
 ```mermaid
 classDiagram
