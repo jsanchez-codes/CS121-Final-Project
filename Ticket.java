@@ -7,7 +7,7 @@ public class Ticket implements HelpDesk, Serializable {
 	String description; 
 	
 	public static void main(String[] args){
-		Ticket t = new Ticket();
+		Ticket t = new Ticket("testCategory","testDescription");
 		t.start();
 	} // end main
 	
@@ -45,5 +45,10 @@ public class Ticket implements HelpDesk, Serializable {
 		} // end while
 	} // end start
 	
+	@Override
+   	public String toString() {
+        	return String.format("Category: %s\nDescription: %s",category,description);
 
+	} // end override
+	
 } // end class def
