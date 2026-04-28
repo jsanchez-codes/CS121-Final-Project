@@ -5,17 +5,13 @@ IT Help Desk Ticket Program
 classDiagram
 
 class Ticket{
-    + Ticket()
+    + Ticket(String category, String description)
     + main() void
     + menu() String
-    + start() String
-    + id: String
-    + title: String
+    + start() void
+    + category: String
     + description: String
-    + priority: String
-    + status: String
-    + createTicket()
-    + priorityQueue()
+    + toString()
 }
 
 class HelpDesk{
@@ -32,41 +28,27 @@ class User{
     + getUserName() String
     + setPassword(password) void
     + getPassword() String
-    + getTicket() abstract String
 }
 
-class Agent{
+class TicketManager{
     - userName: String
     - password: String
-    + login() boolean
-    + login (userName, password) boolean
-    + setUserName(userName) void
-    + getUserName() String
-    + setPassword(password) void
-    + getPassword() String
-    + printTickets()
-    + findTicket()
-    + editTicket()
-    + closeTicket()
+    + main() void
+    + TicketManager()
+    + menu() String
+    + start() void
+    + startAdmin() void
+    ArrayList Ticket
 }
 
 class Admin{
-    - userName: String
-    - password: String
-    + login() boolean
-    + login (userName, password) boolean
-    + setUserName(userName) void
-    + getUserName() String
-    + setPassword(password) void
-    + getPassword() String
-    + printTickets()
-    + editTicket()
-    + saveTickets()
-    + editUserName()
-    + getReport()
+    + main() void
+    + Admin()
+    + menu() String
+    + start() void
 }
 HelpDesk <|.. Admin
 HelpDesk <|.. Ticket
-Admin <|-- Agent
+HelpDesk <|.. TicketManager
 Admin <|-- User
 ```
